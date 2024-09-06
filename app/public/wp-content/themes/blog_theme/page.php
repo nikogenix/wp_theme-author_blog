@@ -1,14 +1,11 @@
-<?php
-get_header();
+<?php get_header(); ?>
 
-while (have_posts()) {
-    the_post(); ?>
+<section class="page-wrap">
 
     <h1><?php the_title(); ?></h1>
-    <?php the_content(); ?>
 
-    <?php
-}
+    <?php get_template_part('includes/section', 'content') ?>
 
-get_footer();
-?>
+</section>
+
+<?php get_footer(); ?>

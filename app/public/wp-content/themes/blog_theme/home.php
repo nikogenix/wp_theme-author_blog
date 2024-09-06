@@ -2,8 +2,6 @@
 
 <section class="page-wrap">
 
-    <h1><?php echo single_cat_title() ?></h1>
-
     <?php get_template_part('includes/section', 'home') ?>
 
     <?php

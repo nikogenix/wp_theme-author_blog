@@ -1,5 +1,16 @@
 <footer>
-    <div class="footer-container">
+    <nav>
+        <?php
+        wp_nav_menu(
+            [
+                'theme_location' => 'footer-menu',
+                'menu_class' => 'footer-bar'
+            ]
+        )
+            ?>
+    </nav>
+
+    <!-- <div class="footer-container">
         <div class="footer-section">
             <p>&copy; 2024 S.J. All rights reserved.</p>
         </div>
@@ -7,7 +18,7 @@
             <a href="">Privacy Policy</a>
             <a href="">Terms of Service</a>
         </div>
-    </div>
+    </div> -->
 </footer>
 
 <?php wp_footer(); ?>
