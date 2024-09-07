@@ -1,0 +1,8 @@
+app/public/wp-content/plugins/*
+!app/public/wp-content/plugins/advanced-custom-fields/
+
+app/public/wp-content/uploads
+
+app/sql
+
+logs
