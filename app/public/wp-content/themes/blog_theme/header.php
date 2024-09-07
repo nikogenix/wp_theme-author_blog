@@ -11,6 +11,7 @@
             <a href="<?php echo site_url() ?>">
                 <img src="" alt="Logo">
             </a>
+            <?php get_search_form() ?>
             <?php
             wp_nav_menu(
                 [
