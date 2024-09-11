@@ -3,6 +3,7 @@
     Author: nikogenix
     Version: 0.1
 */
+
 :root {
 	--primary-light: #fec5bb;
 	--secondary-light: #fec89a;
@@ -21,4 +22,62 @@
 	--heading: #423e3a;
 	--link: var(--secondary-dark);
 	--button: var(--secondary-light);
+
+	--font-fascinate: "FascinateInline", Arial, sans-serif;
+
+	--font-kanit-light: "Kanit", Arial, sans-serif;
+	--font-kanit-light-italic: "Kanit", Arial, sans-serif;
+	--font-kanit-semi-bold: "Kanit", Arial, sans-serif;
+	--font-kanit-semi-bold-italic: "Kanit", Arial, sans-serif;
+
+	--font-marcellus: "Marcellus", Georgia, serif;
+}
+
+@font-face {
+	font-family: "FascinateInline";
+	src: url("fonts/FascinateInline-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Kanit";
+	src: url("fonts/Kanit-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Kanit";
+	src: url("fonts/Kanit-LightItalic.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Kanit";
+	src: url("fonts/Kanit-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Kanit";
+	src: url("fonts/Kanit-SemiBoldItalic.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Marcellus";
+	src: url("fonts/Marcellus-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 }
