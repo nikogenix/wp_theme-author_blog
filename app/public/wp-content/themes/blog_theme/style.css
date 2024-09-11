@@ -3,3 +3,22 @@
     Author: nikogenix
     Version: 0.1
 */
+:root {
+	--primary-light: #fec5bb;
+	--secondary-light: #fec89a;
+	--tertiary-light: #d8e2dc;
+
+	--primary: #a8766d;
+	--secondary: #be916a;
+	--tertiary: #90a89a;
+
+	--primary-dark: #794c44;
+	--secondary-dark: #815c3c;
+	--tertiary-dark: #4a6354;
+
+	--background-light: #faf8fb;
+	--text: #333333;
+	--heading: #423e3a;
+	--link: var(--secondary-dark);
+	--button: var(--secondary-light);
+}
