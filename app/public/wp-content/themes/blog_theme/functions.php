@@ -9,6 +9,8 @@ function load_css()
     wp_register_style("main", get_template_directory_uri() . "/css/main.css", [], false, "all");
     wp_enqueue_style("main");
 
+    wp_register_style("header", get_template_directory_uri() . "/css/header.css", [], false, "all");
+    wp_enqueue_style("header");
 }
 add_action("wp_enqueue_scripts", "load_css");
 
@@ -16,6 +18,8 @@ add_action("wp_enqueue_scripts", "load_css");
 function load_js()
 {
 
+    wp_register_script("header-js", get_template_directory_uri() . "/js/header.js", [], false, true);
+    wp_enqueue_script("header-js");
 
 }
 add_action("wp_enqueue_scripts", "load_js");
