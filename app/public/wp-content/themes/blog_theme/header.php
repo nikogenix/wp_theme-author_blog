@@ -8,33 +8,23 @@
 <body>
     <header>
         <nav>
-            <a href="<?php echo site_url() ?>">
-                <img src="" alt="Logo">
+            <a href="<?php echo site_url() ?>" id="nav-logo">
+                SJ
             </a>
-            <?php get_search_form() ?>
-            <?php
-            wp_nav_menu(
-                [
-                    'theme_location' => 'primary-menu',
-                    'menu_class' => 'top-bar'
-                ]
-            )
-                ?>
+
+            <div class="hamburger"><span></span><span></span><span></span></div>
+
+            <div class="menu-container">
+                <?php
+                wp_nav_menu(
+                    [
+                        'theme_location' => 'primary-menu',
+                        'menu_class' => 'top-bar'
+                    ]
+                )
+                    ?>
+
+                <?php get_search_form() ?>
+            </div>
         </nav>
-
-
-
-
-        <!-- <nav>
-            <ul>
-                <li class="logo">
-                    <a href="<?php echo site_url() ?>">
-                        <img src="" alt="Logo">
-                    </a>
-                </li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav> -->
     </header>
