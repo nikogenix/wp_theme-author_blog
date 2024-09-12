@@ -1,10 +1,62 @@
 header {
 	height: 75px;
 	margin-bottom: 2rem;
+
 	& nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		& #nav-logo {
+			position: relative;
+			font-size: 40px;
+			font-family: var(--font-fascinate);
+			text-decoration: none;
+			align-content: center;
+			padding: 0.5rem;
+			transition: color 200ms ease-out;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+
+		& .hamburger {
+			display: flex;
+			cursor: pointer;
+			z-index: 901;
+
+			flex-direction: column;
+			gap: 5px;
+			padding: 0.5rem;
+
+			& span {
+				width: 25px;
+				height: 3px;
+				background-color: var(--primary-dark);
+				transition: background-color 200ms ease-out;
+			}
+
+			&:hover span {
+				background-color: var(--primary);
+			}
+
+			&:has(+ .open) {
+				span {
+					&:nth-of-type(1) {
+						transform: translate(0, 8px) rotate(-45deg);
+					}
+					&:nth-of-type(2) {
+						transform: translate(100vw);
+					}
+					&:nth-of-type(3) {
+						transform: translate(0, -8px) rotate(45deg);
+					}
+					transition: transform 200ms ease-in;
+				}
+			}
+		}
+
 		& .menu-container {
 			position: absolute;
 			background: var(--tertiary-light);
@@ -12,55 +64,111 @@ header {
 			right: -70vw;
 			width: 70vw;
 			top: 0;
-			padding: 0.5rem;
 			transition: right 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 			opacity: 0;
 			visibility: hidden;
+			display: flex;
+			flex-direction: column-reverse;
+			border-bottom: 2px solid var(--secondary-dark);
+			padding: 1.2rem 0.5rem 0.5rem 0.5rem;
 
 			&.open {
 				right: 0;
 				opacity: 1;
 				visibility: visible;
 			}
-			& li {
+
+			& ul.top-bar {
 				list-style-type: none;
+				padding: 0;
+				margin: 0;
+
+				& li {
+					box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.1);
+
+					&:hover {
+						box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.12);
+					}
+
+					& a {
+						padding: 1.5rem 0.5rem 1rem 0.5rem;
+						font-family: var(--font-marcellus);
+						text-decoration: none;
+						display: block;
+						letter-spacing: 0.02rem;
+						&:hover {
+							color: var(--secondary);
+							background: linear-gradient(
+								90deg,
+								var(--secondary-dark),
+								var(--secondary),
+								var(--secondary-dark)
+							);
+							background-size: 200% auto;
+							background-clip: text;
+							-webkit-text-fill-color: transparent;
+							animation: animatedTextGradient 1s ease-in-out;
+						}
+					}
+				}
+			}
+
+			& form {
+				height: 35px;
+				width: 100%;
+				display: flex;
+				position: relative;
+
+				& input {
+					width: calc(100% - 115px);
+					border: 0;
+					background-color: var(--background-light);
+					transition: box-shadow 0.2s ease;
+				}
+
+				& input:hover,
+				input:hover + button {
+					box-shadow: 0 2px 0 0 var(--secondary);
+				}
+
+				& input:focus,
+				input:focus + button {
+					box-shadow: 0 2px 0 0 var(--secondary-dark);
+				}
+
+				& button {
+					background-color: var(--background-light);
+					border: 0;
+					font-size: 18px;
+					color: var(--tertiary-dark);
+					transition: box-shadow 0.2s ease, color 0.2s ease;
+					&:hover {
+						cursor: pointer;
+					}
+					&:active {
+						color: var(--tertiary);
+					}
+					&:focus-visible {
+						outline: 0;
+						color: var(--tertiary);
+					}
+				}
 			}
 		}
 	}
 }
 
-#nav-logo {
-	position: relative;
-	font-size: 40px;
-	font-family: var(--font-fascinate);
-	text-decoration: none;
-	align-content: center;
-	padding: 0.5rem;
-	transition: color 200ms ease-out;
-
-	&:hover {
-		color: var(--primary);
+@media (prefers-reduced-motion) {
+	header nav div.menu-container {
+		transition: none;
 	}
 }
 
-.hamburger {
-	display: flex;
-	cursor: pointer;
-	z-index: 901;
-
-	flex-direction: column;
-	gap: 5px;
-	padding: 0.5rem;
-
-	& span {
-		width: 25px;
-		height: 3px;
-		background-color: var(--primary-dark);
-		transition: background-color 200ms ease-out;
-	}
-
-	&:hover span {
-		background-color: var(--primary);
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes animatedTextGradient {
+		to {
+			background-position: 200% center;
+		}
 	}
 }
 
