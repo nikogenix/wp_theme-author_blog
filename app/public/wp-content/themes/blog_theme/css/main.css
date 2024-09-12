@@ -27,6 +27,10 @@ button {
 	background-color: var(--button);
 }
 
+input:focus {
+	outline: none;
+}
+
 @media (max-width: 500px) {
 	body {
 		padding: 0 2rem;
