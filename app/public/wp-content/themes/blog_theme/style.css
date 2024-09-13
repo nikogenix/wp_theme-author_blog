@@ -83,20 +83,20 @@
 
 /* temp styles */
 
-@media (max-width: 500px) {
-	header {
-		border-top: 2px solid red !important;
+@media (max-width: 700px) {
+	h1 {
+		border: 2px solid red !important;
 	}
 }
 
-@media (min-width: 501px) and (max-width: 992px) {
-	header {
-		border-top: 2px solid yellow !important;
+@media (min-width: 701px) and (max-width: 1000px) {
+	h1 {
+		border: 2px solid yellow !important;
 	}
 }
 
-@media (min-width: 993px) {
-	header {
-		border-top: 2px solid green !important;
+@media (min-width: 1001px) {
+	h1 {
+		border: 2px solid green !important;
 	}
 }

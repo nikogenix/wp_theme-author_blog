@@ -5,10 +5,8 @@ header {
 	& nav {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 
 		& #nav-logo {
-			position: relative;
 			font-size: 40px;
 			font-family: var(--font-fascinate);
 			text-decoration: none;
@@ -21,81 +19,19 @@ header {
 			}
 		}
 
-		& .hamburger {
-			display: flex;
-			cursor: pointer;
-			z-index: 901;
-
-			flex-direction: column;
-			gap: 5px;
-			padding: 0.5rem;
-
-			& span {
-				width: 25px;
-				height: 3px;
-				background-color: var(--primary-dark);
-				transition: background-color 200ms ease-out;
-			}
-
-			&:hover span {
-				background-color: var(--primary);
-			}
-
-			&:has(+ .open) {
-				span {
-					&:nth-of-type(1) {
-						transform: translate(0, 8px) rotate(-45deg);
-					}
-					&:nth-of-type(2) {
-						transform: translate(100vw);
-					}
-					&:nth-of-type(3) {
-						transform: translate(0, -8px) rotate(45deg);
-					}
-					transition: transform 200ms ease-in;
-				}
-			}
-		}
-
 		& .menu-container {
-			position: absolute;
-			background: var(--tertiary-light);
-			z-index: 900;
-			right: -70vw;
-			width: 70vw;
-			top: 0;
-			transition: right 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-			opacity: 0;
-			visibility: hidden;
-			display: flex;
-			flex-direction: column-reverse;
-			border-bottom: 2px solid var(--secondary-dark);
-			padding: 1.2rem 0.5rem 0.5rem 0.5rem;
-
-			&.open {
-				right: 0;
-				opacity: 1;
-				visibility: visible;
-			}
-
 			& ul.top-bar {
 				list-style-type: none;
 				padding: 0;
 				margin: 0;
 
 				& li {
-					box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.1);
-
-					&:hover {
-						box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.12);
-					}
-
 					& a {
-						padding: 1.5rem 0.5rem 1rem 0.5rem;
 						font-family: var(--font-marcellus);
 						text-decoration: none;
 						display: block;
 						letter-spacing: 0.02rem;
+
 						&:hover {
 							color: var(--secondary);
 							background: linear-gradient(
@@ -115,13 +51,12 @@ header {
 
 			& form {
 				height: 35px;
-				width: 100%;
 				display: flex;
 				position: relative;
 
 				& input {
-					width: calc(100% - 115px);
 					border: 0;
+					padding-left: 8px;
 					background-color: var(--background-light);
 					transition: box-shadow 0.2s ease;
 				}
@@ -172,8 +107,112 @@ header {
 	}
 }
 
-@media (min-width: 601px) and (max-width: 992px) {
-	#nav-logo::after {
+@media (max-width: 400px) {
+	header {
+		& nav {
+			& div.menu-container {
+				right: -100vw;
+				width: calc(100vw - 33px);
+			}
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	header {
+		& nav {
+			justify-content: space-between;
+
+			& #nav-logo {
+				position: relative;
+			}
+
+			& .hamburger {
+				display: flex;
+				cursor: pointer;
+				z-index: 901;
+
+				flex-direction: column;
+				gap: 5px;
+				padding: 0.5rem;
+
+				& span {
+					width: 25px;
+					height: 3px;
+					background-color: var(--primary-dark);
+					transition: background-color 200ms ease-out;
+				}
+
+				&:hover span {
+					background-color: var(--primary);
+				}
+
+				&:has(+ .open) {
+					span {
+						&:nth-of-type(1) {
+							transform: translate(0, 8px) rotate(-45deg);
+						}
+						&:nth-of-type(2) {
+							transform: translate(100vw);
+						}
+						&:nth-of-type(3) {
+							transform: translate(0, -8px) rotate(45deg);
+						}
+						transition: transform 200ms ease-in;
+					}
+				}
+			}
+
+			& .menu-container {
+				position: absolute;
+				background: var(--tertiary-light);
+				z-index: 900;
+				right: -70vw;
+				width: 70vw;
+				max-width: 350px;
+				top: 0;
+				transition: right 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+				opacity: 0;
+				visibility: hidden;
+				display: flex;
+				flex-direction: column-reverse;
+				border-bottom: 2px solid var(--secondary-dark);
+				padding: 1.2rem 0.5rem 0.5rem 0.5rem;
+
+				&.open {
+					right: 0;
+					opacity: 1;
+					visibility: visible;
+				}
+
+				& ul.top-bar {
+					& li {
+						box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.1);
+
+						&:hover {
+							box-shadow: -10px 10px 10px -5px rgba(0, 0, 0, 0.12);
+						}
+
+						& a {
+							padding: 1.5rem 0.5rem 1rem 0.5rem;
+						}
+					}
+				}
+			}
+
+			& form {
+				width: 100%;
+
+				& input {
+					width: calc(100% - 115px);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+	/* #nav-logo::after {
 		content: "";
 		position: absolute;
 		right: 0;
@@ -210,10 +249,10 @@ header {
 
 	header .top-bar a:hover {
 		text-decoration: underline;
-	}
+	} */
 }
 
-@media (min-width: 993px) {
-	header {
-	}
+@media (min-width: 1001px) {
+	/* header {
+	} */
 }
