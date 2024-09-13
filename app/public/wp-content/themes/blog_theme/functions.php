@@ -93,3 +93,5 @@ function add_genre_taxonomy()
 
 }
 add_action('init', 'add_genre_taxonomy');
+
+add_filter('get_the_archive_title_prefix', '__return_false');

@@ -2,7 +2,13 @@
 
 <section class="page-wrap">
 
-    <h1><?php echo single_cat_title() ?></h1>
+    <h1><?php
+    if (is_category() or is_tag()) {
+        echo single_cat_title();
+    } else {
+        echo the_archive_title();
+    }
+    ?></h1>
 
     <?php get_template_part('includes/section', 'home') ?>
 
