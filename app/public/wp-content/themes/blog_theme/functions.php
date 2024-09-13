@@ -95,3 +95,12 @@ function add_genre_taxonomy()
 add_action('init', 'add_genre_taxonomy');
 
 add_filter('get_the_archive_title_prefix', '__return_false');
+
+// DEV-TEMP
+add_action('wp_footer', function () {
+    global $template;
+    echo '<div style="position:fixed;bottom:0;left:0;background:#fff;padding:5px;border:1px solid #ccc;z-index:9999;">';
+    echo 'Template: ' . basename($template);
+    echo '</div>';
+});
+
