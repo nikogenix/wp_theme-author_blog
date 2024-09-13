@@ -12,9 +12,9 @@
                 SJ
             </a>
 
-            <div class="hamburger"><span></span><span></span><span></span></div>
+            <button class="hamburger" aria-expanded="false" aria-controls="top-menu"><span></span><span></span><span></span></button>
 
-            <div class="menu-container">
+            <div class="menu-container" id="top-menu">
                 <?php
                 wp_nav_menu(
                     [

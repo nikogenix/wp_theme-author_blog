@@ -1,6 +1,6 @@
 header {
 	height: 75px;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 
 	& nav {
 		display: flex;
@@ -75,17 +75,13 @@ header {
 					background-color: var(--background-light);
 					border: 0;
 					font-size: 18px;
-					color: var(--tertiary-dark);
+					color: var(--primary-dark);
 					transition: box-shadow 0.2s ease, color 0.2s ease;
 					&:hover {
 						cursor: pointer;
 					}
 					&:active {
-						color: var(--tertiary);
-					}
-					&:focus-visible {
-						outline: 0;
-						color: var(--tertiary);
+						color: var(--primary);
 					}
 				}
 			}
@@ -112,7 +108,8 @@ header {
 		& nav {
 			& div.menu-container {
 				right: -100vw;
-				width: calc(100vw - 33px);
+				width: 100%;
+				max-width: unset;
 			}
 		}
 	}
@@ -123,15 +120,12 @@ header {
 		& nav {
 			justify-content: space-between;
 
-			& #nav-logo {
-				position: relative;
-			}
-
 			& .hamburger {
 				display: flex;
 				cursor: pointer;
 				z-index: 901;
-
+				background-color: unset;
+				border: unset;
 				flex-direction: column;
 				gap: 5px;
 				padding: 0.5rem;
@@ -153,19 +147,21 @@ header {
 							transform: translate(0, 8px) rotate(-45deg);
 						}
 						&:nth-of-type(2) {
-							transform: translate(100vw);
+							transform: translate(2.5rem);
+							background-color: rgba(0, 0, 0, 0);
+							visibility: hidden;
 						}
 						&:nth-of-type(3) {
 							transform: translate(0, -8px) rotate(45deg);
 						}
-						transition: transform 200ms ease-in;
+						transition: transform 200ms ease-out, background-color 200ms ease-out, visibility 200ms ease-out;
 					}
 				}
 			}
 
 			& .menu-container {
 				position: absolute;
-				background: var(--tertiary-light);
+				background-color: var(--primary-light);
 				z-index: 900;
 				right: -70vw;
 				width: 70vw;
@@ -175,7 +171,7 @@ header {
 				opacity: 0;
 				visibility: hidden;
 				display: flex;
-				flex-direction: column-reverse;
+				flex-direction: column;
 				border-bottom: 2px solid var(--secondary-dark);
 				padding: 1.2rem 0.5rem 0.5rem 0.5rem;
 
@@ -195,6 +191,7 @@ header {
 
 						& a {
 							padding: 1.5rem 0.5rem 1rem 0.5rem;
+							margin: 5px 0;
 						}
 					}
 				}
@@ -211,45 +208,86 @@ header {
 	}
 }
 
+@media (min-width: 701px) {
+	header {
+		& nav {
+			height: 100%;
+			gap: 10px;
+
+			#nav-logo {
+				position: relative;
+			}
+
+			#nav-logo::after {
+				content: "";
+				position: absolute;
+				right: -10px;
+				top: 25%;
+				height: 50%;
+				width: 1px;
+				background-color: var(--primary);
+				pointer-events: none;
+			}
+
+			.hamburger {
+				display: none;
+			}
+
+			& .menu-container {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+
+				& ul.top-bar {
+					display: flex;
+					align-items: center;
+					justify-content: left;
+					height: 100%;
+
+					& li {
+						display: flex;
+						align-items: center;
+						height: 100%;
+
+						& a {
+							position: relative;
+							padding: 8px 15px;
+							display: flex;
+							align-items: center;
+							height: 100%;
+							text-decoration: none;
+
+							&:hover {
+								text-decoration: underline;
+
+								&::after {
+									content: "";
+									position: absolute;
+									bottom: -1px;
+									left: 0;
+									width: 100%;
+									height: 2px;
+									background: linear-gradient(
+										90deg,
+										var(--secondary-dark),
+										var(--secondary),
+										var(--secondary-dark)
+									);
+									background-size: 200% auto;
+									animation: animatedTextGradient 1s ease-in-out;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 701px) and (max-width: 1000px) {
-	/* #nav-logo::after {
-		content: "";
-		position: absolute;
-		right: 0;
-		top: 20%;
-		height: 60%;
-		width: 1px;
-		background-color: var(--primary);
-	}
-
-	header .top-bar {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: left;
-		height: 100%;
-	}
-
-	header .top-bar li {
-		display: flex;
-		align-items: center;
-		height: 100%;
-	}
-
-	header .top-bar li a {
-		text-decoration: none;
-		font-size: 16px;
-		padding: 0 15px;
-		display: flex;
-		align-items: center;
-		height: 100%;
-	}
-
-	header .top-bar a:hover {
-		text-decoration: underline;
-	} */
 }
 
 @media (min-width: 1001px) {
