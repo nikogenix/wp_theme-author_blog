@@ -1,5 +1,6 @@
 header {
 	height: 75px;
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 
 	& nav {
@@ -110,6 +111,7 @@ header {
 				right: -100vw;
 				width: 100%;
 				max-width: unset;
+				margin-top: 0;
 			}
 		}
 	}
@@ -117,6 +119,9 @@ header {
 
 @media (max-width: 700px) {
 	header {
+		margin-top: 0;
+		margin-bottom: 0;
+
 		& nav {
 			justify-content: space-between;
 
@@ -174,6 +179,7 @@ header {
 				flex-direction: column;
 				border-bottom: 2px solid var(--secondary-dark);
 				padding: 1.2rem 0.5rem 0.5rem 0.5rem;
+				margin-top: 0;
 
 				&.open {
 					right: 0;
@@ -222,8 +228,8 @@ header {
 				content: "";
 				position: absolute;
 				right: -10px;
-				top: 25%;
-				height: 50%;
+				top: 35%;
+				height: 35%;
 				width: 1px;
 				background-color: var(--primary);
 				pointer-events: none;
@@ -281,6 +287,11 @@ header {
 							}
 						}
 					}
+				}
+
+				input {
+					flex: 1 1 auto;
+					width: 10%;
 				}
 			}
 		}
