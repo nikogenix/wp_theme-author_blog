@@ -1,7 +1,5 @@
 header {
-	height: 75px;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	height: calc(75px + 2rem);
 
 	& nav {
 		display: flex;
@@ -119,8 +117,7 @@ header {
 
 @media (max-width: 700px) {
 	header {
-		margin-top: 0;
-		margin-bottom: 0;
+		height: 75px;
 
 		& nav {
 			justify-content: space-between;
@@ -302,6 +299,4 @@ header {
 }
 
 @media (min-width: 1001px) {
-	/* header {
-	} */
 }
