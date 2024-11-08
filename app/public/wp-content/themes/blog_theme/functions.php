@@ -11,6 +11,10 @@ function load_css()
 
     wp_register_style("header", get_template_directory_uri() . "/css/header.css", [], false, "all");
     wp_enqueue_style("header");
+
+    wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
+    wp_enqueue_style("footer");
+
 }
 add_action("wp_enqueue_scripts", "load_css");
 
@@ -40,6 +44,8 @@ register_nav_menus(
     [
         'primary-menu' => 'Primary Menu Location',
         'footer-menu' => 'Footer Menu Location',
+        'privacy-menu' => 'Privacy Menu Location',
+
     ]
 );
 

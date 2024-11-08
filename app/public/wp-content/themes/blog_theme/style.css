@@ -23,6 +23,8 @@
 	--link: var(--secondary-dark);
 	--button: var(--secondary-light);
 
+	--footer-height: 16rem;
+
 	--font-fascinate: "FascinateInline", Arial, sans-serif;
 
 	--font-kanit-light: "Kanit", Arial, sans-serif;
