@@ -12,6 +12,9 @@ function load_css()
     wp_register_style("header", get_template_directory_uri() . "/css/header.css", [], false, "all");
     wp_enqueue_style("header");
 
+    wp_register_style("front-page", get_template_directory_uri() . "/css/front-page.css", [], false, "all");
+    wp_enqueue_style("front-page");
+
     wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
     wp_enqueue_style("footer");
 
@@ -101,6 +104,13 @@ function add_genre_taxonomy()
 add_action('init', 'add_genre_taxonomy');
 
 add_filter('get_the_archive_title_prefix', '__return_false');
+
+function custom_excerpt_more($more)
+{
+    return ' (...)';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
 
 // DEV-TEMP
 add_action('wp_footer', function () {
