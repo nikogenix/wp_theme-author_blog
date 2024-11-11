@@ -82,23 +82,3 @@
 	font-style: normal;
 	font-display: swap;
 }
-
-/* temp styles */
-
-@media (max-width: 700px) {
-	h1 {
-		border: 2px solid red !important;
-	}
-}
-
-@media (min-width: 701px) and (max-width: 1000px) {
-	h1 {
-		border: 2px solid yellow !important;
-	}
-}
-
-@media (min-width: 1001px) {
-	h1 {
-		border: 2px solid green !important;
-	}
-}
