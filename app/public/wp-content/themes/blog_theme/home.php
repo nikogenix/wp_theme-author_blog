@@ -11,7 +11,9 @@
     }
     ?></h1>
 
-    <?php get_template_part('includes/section', 'home') ?>
+    <div class="posts-container">
+        <?php get_template_part('includes/section', 'home') ?>
+    </div>
 
     <?php
     the_posts_pagination(array(

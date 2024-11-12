@@ -15,6 +15,9 @@ function load_css()
     wp_register_style("front-page", get_template_directory_uri() . "/css/front-page.css", [], false, "all");
     wp_enqueue_style("front-page");
 
+    wp_register_style("archive", get_template_directory_uri() . "/css/archive.css", [], false, "all");
+    wp_enqueue_style("archive");
+
     wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
     wp_enqueue_style("footer");
 
