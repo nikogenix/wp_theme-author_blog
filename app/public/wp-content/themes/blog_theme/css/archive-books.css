@@ -1,0 +1,90 @@
+section {
+	.books-container {
+		margin: 1rem 0;
+		display: grid;
+		gap: 30px;
+
+		.individual-book {
+			display: block;
+			align-items: center;
+			position: relative;
+			padding: 1rem;
+			box-shadow: 1px 1px 0 2px var(--background-light);
+			margin-left: -2rem;
+
+			&::after {
+				content: "";
+				display: inline-block;
+			}
+
+			&:last-of-type {
+				margin-bottom: 1rem;
+			}
+
+			.image {
+				width: 40vw;
+				max-width: 360px;
+				height: 100%;
+				background-size: 80%;
+				background-position-y: top;
+				background-position-x: -90%;
+				z-index: -1;
+				float: left;
+				shape-outside: polygon(0 0, 70% 0, 0 100%);
+				clip-path: polygon(0 0, 70% 0, 0 100%);
+				shape-margin: 5px;
+			}
+
+			.background-colour {
+				background-size: 100000%;
+				filter: opacity(0.5) sepia(0.2);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: -999;
+			}
+
+			.text {
+				padding: 1rem 0;
+				max-height: 100%;
+				overflow-y: clip;
+
+				h3 {
+					mix-blend-mode: color-burn;
+					filter: brightness(0.5) contrast(1);
+					letter-spacing: 0.5px;
+
+					a,
+					a:visited {
+						color: rgb(63 63 63);
+					}
+				}
+
+				p {
+					text-align: justify;
+					font-size: small;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	section {
+		.books-container {
+			.individual-book {
+				.text {
+					padding: 1rem 0 3rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1500px) {
+	section {
+		.books-container {
+			margin: 1rem 10vw;
+		}
+	}
+}

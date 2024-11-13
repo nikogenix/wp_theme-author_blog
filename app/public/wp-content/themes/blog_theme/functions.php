@@ -18,6 +18,9 @@ function load_css()
     wp_register_style("archive", get_template_directory_uri() . "/css/archive.css", [], false, "all");
     wp_enqueue_style("archive");
 
+    wp_register_style("archive-books", get_template_directory_uri() . "/css/archive-books.css", [], false, "all");
+    wp_enqueue_style("archive-books");
+
     wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
     wp_enqueue_style("footer");
 
