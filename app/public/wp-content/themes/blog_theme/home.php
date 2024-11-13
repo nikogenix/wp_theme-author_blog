@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-wrap">
+<section class="">
 
     <h1><?php
     $current_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');

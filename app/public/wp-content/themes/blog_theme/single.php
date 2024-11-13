@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-wrap">
+<section class="">
 
     <?php if (has_post_thumbnail()): ?>
         <img src="<?php the_post_thumbnail_url('blog-small'); ?>" alt="<?php the_title(); ?>">

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-wrap">
+<section class="">
 
     <h1><?php
     echo the_archive_title();

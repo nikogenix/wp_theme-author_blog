@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-wrap">
+<section class="">
 
     <h1><?php
     if (is_category() or is_tag()) {

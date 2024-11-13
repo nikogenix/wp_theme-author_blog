@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-wrap">
+<section class="">
 
     <h1>Search results for '<?php echo get_search_query(); ?>'</h1>
 
