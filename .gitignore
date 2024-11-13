@@ -9,3 +9,13 @@ app/public/*
 !app/public/wp-content/
 app/public/wp-content/*
 !app/public/wp-content/themes
+
+!app/
+app/*
+!app/public/
+app/public/*
+!app/public/wp-content/
+app/public/wp-content/*
+!app/public/wp-content/plugins
+app/public/wp-content/plugins*
+!app/public/wp-content/plugins/form-plugin
