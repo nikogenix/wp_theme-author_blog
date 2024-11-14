@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<div class="container">
+<div class="contact-container">
 
     <h1><?php the_title(); ?></h1>
 

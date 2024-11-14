@@ -24,6 +24,9 @@ function load_css()
     wp_register_style("page", get_template_directory_uri() . "/css/page.css", [], false, "all");
     wp_enqueue_style("page");
 
+    wp_register_style("contact", get_template_directory_uri() . "/css/contact.css", [], false, "all");
+    wp_enqueue_style("contact");
+
     wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
     wp_enqueue_style("footer");
 

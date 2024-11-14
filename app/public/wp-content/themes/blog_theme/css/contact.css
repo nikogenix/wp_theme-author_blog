@@ -1,0 +1,52 @@
+.contact-container {
+	.contact-group {
+		background: white;
+		margin-top: 2rem;
+
+		> div > div > div > div > div {
+			display: grid;
+
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+
+			form#enquiry_form::after {
+				content: "";
+				position: absolute;
+				border: 1px solid rgb(204, 204, 204);
+				top: 20px;
+				left: calc(100% + 5px);
+				height: calc(100% - 40px);
+			}
+
+			.form-recipient {
+				font-size: 0.8rem;
+				padding: 2rem 1rem;
+				> div {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					height: 100%;
+					ul {
+						list-style: none;
+						padding-left: 0;
+						li {
+							border-bottom: 1px solid rgb(204, 204, 204);
+							line-height: 31px;
+							a {
+								text-decoration: none;
+								color: var(--text);
+								&:hover {
+									text-decoration: underline;
+									color: var(--primary);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& > :last-child {
+		padding-bottom: calc(2rem + var(--footer-height));
+	}
+}

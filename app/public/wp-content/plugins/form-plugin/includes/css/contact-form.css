@@ -1,0 +1,90 @@
+form#enquiry_form {
+	position: relative;
+	padding: 2rem 1rem;
+	background: white;
+	.form-fields {
+		display: grid;
+		gap: 30px;
+
+		.form-group,
+		.form-message {
+			position: relative;
+			width: 100%;
+
+			label {
+				position: absolute;
+				top: -0.8rem;
+				display: none;
+				font-size: 0.8rem;
+			}
+			input,
+			textarea {
+				width: 100%;
+			}
+			textarea {
+				/* CSS for horizontal rules source: https://stackoverflow.com/questions/9468153/textarea-with-horizontal-rule */
+				background-attachment: local;
+				background-image: linear-gradient(to right, white 10px, transparent 10px),
+					linear-gradient(to left, white 10px, transparent 10px),
+					repeating-linear-gradient(
+						white,
+						white 30px,
+						rgb(204, 204, 204) 30px,
+						rgb(204, 204, 204) 31px,
+						white 31px
+					);
+				line-height: 31px;
+				padding: 5px 10px;
+				border: none;
+				outline: none;
+				&:focus {
+					background-image: linear-gradient(to right, white 10px, transparent 10px),
+						linear-gradient(to left, white 10px, transparent 10px),
+						repeating-linear-gradient(
+							white,
+							white 30px,
+							var(--primary) 30px,
+							var(--primary) 31px,
+							white 31px
+						);
+				}
+			}
+		}
+		.form-message:has(textarea:focus) {
+			label {
+				display: unset;
+				left: 10px;
+			}
+			textarea::placeholder {
+				color: rgba(0, 0, 0, 0);
+			}
+		}
+		.form-contact-details {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			padding-top: 10px;
+			margin: 0 10px;
+			max-width: 200px;
+
+			.form-group {
+				input {
+					border: none;
+					border-bottom: 1px solid rgb(204, 204, 204);
+
+					&:focus {
+						border-bottom: 1px solid var(--primary);
+					}
+				}
+			}
+			.form-group:has(input:focus) {
+				label {
+					display: unset;
+				}
+				input::placeholder {
+					color: rgba(0, 0, 0, 0);
+				}
+			}
+		}
+	}
+}
