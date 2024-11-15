@@ -37,6 +37,8 @@ form#enquiry_form {
 				padding: 5px 10px;
 				border: none;
 				outline: none;
+				width: 100% !important;
+
 				&:focus {
 					background-image: linear-gradient(to right, white 10px, transparent 10px),
 						linear-gradient(to left, white 10px, transparent 10px),
@@ -86,5 +88,83 @@ form#enquiry_form {
 				}
 			}
 		}
+	}
+
+	.button-alerts {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 5px;
+
+		button {
+			background: white;
+			position: relative;
+			border: 5px solid var(--primary);
+			font-weight: bold;
+			color: var(--primary-dark);
+			border-radius: 50%;
+			height: 4.5rem;
+			width: 4.5rem;
+			text-decoration: overline underline;
+			text-underline-offset: 5px;
+			flex-shrink: 0;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: -3.5px;
+				border: 2px solid white;
+				border-radius: 50%;
+			}
+
+			&:hover {
+				border: 6px solid var(--primary);
+			}
+
+			&:active {
+				text-decoration-thickness: 2px;
+				text-decoration-color: var(--primary);
+			}
+		}
+
+		#form_success,
+		#form_error {
+			display: none;
+			padding: 0.5rem;
+			position: relative;
+			border: 5px solid var(--primary);
+			font-weight: bold;
+			color: var(--primary-dark);
+			text-decoration: overline underline;
+			text-underline-offset: 5px;
+			transform: rotate(350deg);
+			flex-grow: 1;
+			max-width: 250px;
+			height: fit-content;
+			text-align: center;
+			z-index: 100;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: -3.5px;
+				border: 2px solid white;
+			}
+		}
+
+		#form_success {
+			color: rgb(0, 131, 22);
+			border-color: rgb(0, 131, 22);
+		}
+		#form_error {
+			color: rgb(141, 0, 0);
+			border-color: rgb(141, 0, 0);
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	form#enquiry_form {
+		padding: 1rem;
 	}
 }

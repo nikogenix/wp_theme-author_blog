@@ -26,11 +26,14 @@
         </div>
     </div>
 
-    <button type="submit">Submit</button>
+    <div class="button-alerts">
+        <button type="submit">Submit</button>
 
-    <div id="form_success"></div>
+        <div id="form_success"></div>
 
-    <div id="form_error"></div>
+        <div id="form_error"></div>
+    </div>
+
 
 </form>
 
@@ -41,6 +44,7 @@
             event.preventDefault();
 
             document.getElementById("form_error").style.display = "none";
+            document.getElementById("form_success").style.display = "none";
 
             const form = this;
             const formData = new FormData(form);
@@ -50,16 +54,16 @@
 
             xhr.onload = function () {
                 if (xhr.status === 200) {
-                    document.getElementById("form_success").innerHTML = xhr.responseText;
+                    document.getElementById("form_success").innerHTML = "Message sent succesfully";
                     document.getElementById("form_success").style.display = "block";
                 } else {
-                    document.getElementById("form_error").innerHTML = "There was an error submitting your message.";
+                    document.getElementById("form_error").innerHTML = "There was an error submitting your message";
                     document.getElementById("form_error").style.display = "block";
                 }
             };
 
             xhr.onerror = function () {
-                document.getElementById("form_error").innerHTML = "There was an error submitting your message.";
+                document.getElementById("form_error").innerHTML = "There was an error submitting your message";
                 document.getElementById("form_error").style.display = "block";
             };
 

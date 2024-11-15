@@ -31,12 +31,12 @@ function handle_enquiry($data)
     $params = $data->get_params();
 
     if (!wp_verify_nonce($data['_wpnonce'], 'wp_rest')) {
-        return new WP_REST_Response("Message not sent.", 422);
+        return new WP_REST_Response("Message not sent", 422);
     }
 
     unset($params['_wpnonce']);
     unset($params['_wp_http_referer']);
 
-    return new WP_REST_Response("Message sent succesfully.", 200);
+    return new WP_REST_Response("Message sent succesfully", 200);
 
 }
