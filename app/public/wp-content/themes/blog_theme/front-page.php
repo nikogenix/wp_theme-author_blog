@@ -68,20 +68,24 @@
 </section>
 
 <?php
-$about_page = new WP_Query(
+$about_page_query = new WP_Query(
     array(
         'post_type' => 'page',
-        'title' => 'About',
+        'name' => 'about',
     )
 );
 
-if ($about_page):
-    $about_excerpt = get_the_excerpt($about_page->ID);
-    echo '<section class="home-section home-about">';
-    echo "<h2>A bit about me</h2>";
-    echo '<p>' . wp_trim_words($about_excerpt, 50, " (...)") . '</p>';
-    echo '<p>Read more on my <a href="/about">About</a> page</p>';
-    echo "</section>";
+if ($about_page_query->have_posts()):
+    while ($about_page_query->have_posts()):
+        $about_page_query->the_post();
+        $about_excerpt = get_the_excerpt();
+        echo '<section class="home-section home-about">';
+        echo '<h2>A bit about me</h2>';
+        echo '<p>' . wp_trim_words($about_excerpt, 50, " (...)") . '</p>';
+        echo '<p>Read more on my <a href="/about">About</a> page</p>';
+        echo '</section>';
+    endwhile;
+    wp_reset_postdata();
 endif;
 ?>
 
