@@ -65,6 +65,8 @@
     }
     ?>
 
+    <p>Browse all the <a href="/blog">posts</a></p>
+
 </section>
 
 <?php
