@@ -61,6 +61,14 @@ section.home-section {
 				h3 {
 					min-height: 3em;
 					text-align: center;
+					border-bottom: 1px solid rgb(145 145 145 / 25%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					a {
+						text-decoration: none;
+					}
 				}
 
 				h3,
@@ -68,6 +76,13 @@ section.home-section {
 					margin: 1rem 2rem;
 				}
 			}
+		}
+
+		> p {
+			text-align: right;
+			margin-top: 2em;
+			margin-bottom: 0;
+			font-size: 0.8rem;
 		}
 	}
 
