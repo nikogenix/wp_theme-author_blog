@@ -60,6 +60,11 @@ header {
 					transition: box-shadow 0.2s ease;
 				}
 
+				& input,
+				input + button {
+					box-shadow: 0 2px 0 0 var(--secondary-dark);
+				}
+
 				& input:hover,
 				input:hover + button {
 					box-shadow: 0 2px 0 0 var(--secondary);
