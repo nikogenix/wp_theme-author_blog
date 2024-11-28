@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="">
+<section class="search-container">
 
     <h1>Search results for '<?php echo get_search_query(); ?>'</h1>
 

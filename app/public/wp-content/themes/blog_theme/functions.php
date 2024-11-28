@@ -33,6 +33,9 @@ function load_css()
     wp_register_style("contact", get_template_directory_uri() . "/css/contact.css", [], false, "all");
     wp_enqueue_style("contact");
 
+    wp_register_style("search", get_template_directory_uri() . "/css/search.css", [], false, "all");
+    wp_enqueue_style("search");
+
     wp_register_style("footer", get_template_directory_uri() . "/css/footer.css", [], false, "all");
     wp_enqueue_style("footer");
 
