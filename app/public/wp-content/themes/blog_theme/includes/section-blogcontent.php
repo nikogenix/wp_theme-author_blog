@@ -6,9 +6,13 @@
 
         <?php the_content(); ?>
 
-        <span class="categories">Related categories: <?php the_category(" "); ?> </span>
+        <?php if (has_category()): ?>
+            <span class="categories">Related categories: <?php the_category(" "); ?> </span>
+        <?php endif; ?>
 
-        <span class="tags wide-section"><?php the_tags("", "", ""); ?> </span>
+        <?php if (has_tag()): ?>
+            <span class="tags wide-section"><?php the_tags("", "", ""); ?> </span>
+        <?php endif; ?>
 
 
     <?php //comments_template() ?>
