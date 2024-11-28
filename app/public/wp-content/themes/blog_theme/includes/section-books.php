@@ -5,6 +5,9 @@
             <?php if (has_post_thumbnail()): ?>
                 <div class="image" style="background-image: url(<?php the_post_thumbnail_url('blog-small'); ?>);"></div>
                 <div class="background-colour" style="background-image: url(<?php the_post_thumbnail_url('blog-small'); ?>);"></div>
+            <?php else: ?>
+                <div class="image no-image"></div>
+                <div class="background-colour no-image"></div>
             <?php endif; ?>
 
             <div class="text">
