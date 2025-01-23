@@ -78,6 +78,7 @@
 				text-decoration: underline overline;
 				height: min-content;
 
+				/* inspiration for tag aspect from https://mohitvash.wordpress.com/2016/06/20/css-trick-create-tag-icon-with-dynamic-text-width-using-pure-css/ */
 				&::after {
 					content: "";
 					border-width: 1rem 1rem 0 1rem;
